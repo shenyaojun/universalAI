@@ -25,8 +25,8 @@ EMBEDDING_MODEL_OUTPUT_PATH = "output"
 # 列表中第一个模型将作为 API 和 WEBUI 的默认模型。
 # 在这里，我们使用目前主流的两个离线模型，其中，chatglm3-6b 为默认加载模型。
 # 如果你的显存不足，可使用 Qwen-1_8B-Chat, 该模型 FP16 仅需 3.8G显存。
-# LLM_MODELS = ["chatglm2-6b","qwen-api","zhipu-api"] # "Qwen-1_8B-Chat",
-LLM_MODELS = ["qwen-api","zhipu-api"] # "Qwen-1_8B-Chat",
+LLM_MODELS = ["chatglm3-6b-32k","qwen-api","zhipu-api"] # "Qwen-1_8B-Chat",
+# LLM_MODELS = ["qwen-api","zhipu-api"] # "Qwen-1_8B-Chat",
 
 # AgentLM模型的名称 (可以不指定，指定之后就锁定进入Agent之后的Chain的模型，不指定就是LLM_MODELS[0])
 Agent_MODEL = None
@@ -156,7 +156,7 @@ MODEL_PATH = {
         "m3e-large": "moka-ai/m3e-large",
         "bge-small-zh": "BAAI/bge-small-zh",
         "bge-base-zh": "BAAI/bge-base-zh",
-        "bge-large-zh": "/kaggle/working/universalAI/bge-large-zh",
+        "bge-large-zh": "/mnt/workspace/universalAI/bge-large-zh",
         "bge-large-zh-noinstruct": "BAAI/bge-large-zh-noinstruct",
         "bge-base-zh-v1.5": "BAAI/bge-base-zh-v1.5",
         "bge-large-zh-v1.5": "BAAI/bge-large-zh-v1.5",
@@ -172,7 +172,7 @@ MODEL_PATH = {
         "chatglm2-6b-32k": "THUDM/chatglm2-6b-32k",
 
         "chatglm3-6b": "THUDM/chatglm3-6b",
-        "chatglm3-6b-32k": "/kaggle/working/universalAI/chatglm3-6b-32k",
+        "chatglm3-6b-32k": "/mnt/workspace/universalAI/chatglm3-6b-32k",
         "chatglm3-6b-base": "THUDM/chatglm3-6b-base",
 
         "Qwen-1_8B": "Qwen/Qwen-1_8B",
@@ -258,7 +258,7 @@ VLLM_MODEL_DICT = {
     "chatglm2-6b": "THUDM/chatglm2-6b",
     "chatglm2-6b-32k": "THUDM/chatglm2-6b-32k",
     "chatglm3-6b": "THUDM/chatglm3-6b",
-    "chatglm3-6b-32k": "THUDM/chatglm3-6b-32k",
+    "chatglm3-6b-32k": "/mnt/workspace/universalAI/chatglm3-6b-32k",
 
     "BlueLM-7B-Chat": "vivo-ai/BlueLM-7B-Chat",
     "BlueLM-7B-Chat-32k": "vivo-ai/BlueLM-7B-Chat-32k",
