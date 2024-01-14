@@ -6,6 +6,7 @@ import sys
 from multiprocessing import Process
 from datetime import datetime
 from pprint import pprint
+from fastchat.serve.model_worker import app, GptqConfig, AWQConfig, ModelWorker, worker_id
 
 
 # 设置numexpr最大线程数，默认为CPU核心数
@@ -174,7 +175,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
 
         else:
             print(f" ({args.model_names[0]}) is local non-vllm model............")
-            from fastchat.serve.model_worker import app, GptqConfig, AWQConfig, ModelWorker, worker_id
+            
             print(" SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS is local non-vllm model............")
 
             args.gpus = "0,1" # GPU的编号,如果有多个GPU，可以设置为"0,1,2,3"
