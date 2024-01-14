@@ -688,9 +688,10 @@ async def start_main_server():
     model_worker_started = []
     if args.model_worker:
         for model_name in args.model_name:
-            print("model_name:" + model_name)
+            print("model_name222222:" + model_name)
             config = get_model_worker_config(model_name)
             if not config.get("online_api"):
+                print("model_name is not online:" + model_name)
                 e = manager.Event()
                 model_worker_started.append(e)
                 process = Process(
