@@ -373,6 +373,8 @@ def run_model_worker(
     from fastapi import Body
     import sys
     from server.utils import set_httpx_config
+
+    print(f"starting model worker111111111: {model_name}")
     set_httpx_config()
 
     kwargs = get_model_worker_config(model_name)
