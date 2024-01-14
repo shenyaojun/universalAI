@@ -107,6 +107,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
         print(f" ({args.model_names[0]}) is local model............")
         from configs.model_config import VLLM_MODEL_DICT
         if kwargs["model_names"][0] in VLLM_MODEL_DICT and args.infer_turbo == "vllm":
+            print(f" ({args.model_names[0]}) is local vllm model............")
             import fastchat.serve.vllm_worker
             from fastchat.serve.vllm_worker import VLLMWorker, app, worker_id
             from vllm import AsyncLLMEngine
@@ -172,6 +173,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
             sys.modules["fastchat.serve.vllm_worker"].logger.setLevel(log_level)
 
         else:
+            print(f" ({args.model_names[0]}) is local non-vllm model............")
             from fastchat.serve.model_worker import app, GptqConfig, AWQConfig, ModelWorker, worker_id
 
             args.gpus = "0,1" # GPU的编号,如果有多个GPU，可以设置为"0,1,2,3"
