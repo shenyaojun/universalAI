@@ -96,7 +96,7 @@ FSCHAT_MODEL_WORKERS = {
     # "Qwen-1_8B-Chat": { # 使用default中的IP和端口
     #    "device": "cpu",
     # },
-    "chatglm3-6b": {  # 使用default中的IP和端口
+    "chatglm2-6b": {  # 使用default中的IP和端口
         "device": "cuda",
     },
 
