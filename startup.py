@@ -93,6 +93,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
         worker = ""
     # 在线模型API
     elif worker_class := kwargs.get("worker_class"):
+        print(f" ({args.model_names[0]}) is online api............")
         from fastchat.serve.base_model_worker import app
 
         worker = worker_class(model_names=args.model_names,
@@ -102,6 +103,8 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
         sys.modules["fastchat.serve.base_model_worker"].logger.setLevel(log_level)
     # 本地模型
     else:
+        
+        print(f" ({args.model_names[0]}) is local model............")
         from configs.model_config import VLLM_MODEL_DICT
         if kwargs["model_names"][0] in VLLM_MODEL_DICT and args.infer_turbo == "vllm":
             import fastchat.serve.vllm_worker
