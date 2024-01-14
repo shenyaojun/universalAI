@@ -175,7 +175,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
         else:
             print(f" ({args.model_names[0]}) is local non-vllm model............")
             from fastchat.serve.model_worker import app, GptqConfig, AWQConfig, ModelWorker, worker_id
-            print(f" ({args}) is local non-vllm model............")
+            print(f" SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS is local non-vllm model............")
 
             args.gpus = "0,1" # GPU的编号,如果有多个GPU，可以设置为"0,1,2,3"
             args.max_gpu_memory = "14GiB"
