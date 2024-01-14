@@ -366,6 +366,7 @@ def get_model_worker_config(model_name: str = None) -> dict:
         if path and os.path.isdir(path):
             config["model_path_exists"] = True
         config["device"] = llm_device(config.get("device"))
+        print(model_name, "************",config)
     return config
 
 
