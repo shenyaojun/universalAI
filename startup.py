@@ -216,6 +216,7 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
                 wbits=args.awq_wbits,
                 groupsize=args.awq_groupsize,
             )
+            print(f"FastChat LLM Server33333333333333333333333 ({args.model_names[0]})")
 
             worker = ModelWorker(
                 controller_addr=args.controller_address,
