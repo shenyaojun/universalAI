@@ -7,6 +7,9 @@ fschat>=0.2.33
 xformers>=0.0.22.post7
 openai>=1.3.6
 sentence_transformers
+pypinyin==0.50.0
+python-multipart==0.0.6
+
 transformers>=4.35.2
 torch==2.1.0  ##on Windows system, install the cuda version manually from https://pytorch.org/
 torchvision  #on Windows system, install the cuda version manually from https://pytorch.org/
