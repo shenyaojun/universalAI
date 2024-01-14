@@ -205,12 +205,15 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
                         f"Larger --num-gpus ({args.num_gpus}) than --gpus {args.gpus}!"
                     )
                 os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
+            
+            print(f"FastChat LLM 4444444444444 ({args.model_names[0]})")
             gptq_config = GptqConfig(
                 ckpt=args.gptq_ckpt or args.model_path,
                 wbits=args.gptq_wbits,
                 groupsize=args.gptq_groupsize,
                 act_order=args.gptq_act_order,
             )
+            print(f"FastChat LLM 55555555555555555555555 ({args.model_names[0]})")
             awq_config = AWQConfig(
                 ckpt=args.awq_ckpt or args.model_path,
                 wbits=args.awq_wbits,
